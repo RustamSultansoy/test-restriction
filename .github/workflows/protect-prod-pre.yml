@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Check for restricted file changes
         run: |
-          if git diff --name-only HEAD^ HEAD | grep -E "myfolder/second.yml|myfolder/third.yml"; then
+          if git diff --name-only origin/main HEAD | grep -E "myfolder/second.yml|myfolder/third.yml"; then
             echo "Error: Changes are not allowed!"
             exit 1
           fi
